@@ -1,0 +1,12 @@
+export { default as ChevronLeft } from "./chevronLeft/ChevronLeft";
+export { default as Export } from "./export/Export";
+export { default as Microphone } from "./microphone/Microphone";
+export { default as Voice } from "./voice/Voice";
+export { default as TextCheck } from "./textCheck/TextCheck";
+export { default as Check } from "./check/Check";
+export { default as MenuIcon } from "./menuIcon/MenuIcon";
+export { default as ChevronDown } from "./chevronDown/ChevronDown";
+export { default as Arrow } from "./arrow/Arrow";
+export { default as Plus } from "./plus/Plus";
+export { default as Spin } from "./spin/Spin";
+export { default as Dot } from "./dot/Dot";

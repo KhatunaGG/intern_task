@@ -1,0 +1,36 @@
+const Arrow = () => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="transform rotate-90 sm:rotate-0 "
+    >
+      <path
+        d="M5.33333 16.0001H26.6667"
+        stroke="#323232"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.6667 21.3347L5.33333 16.0001L10.6667 10.6654"
+        stroke="#323232"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21.3307 10.6654L26.6653 16.0001L21.3307 21.3347"
+        stroke="#323232"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default Arrow;

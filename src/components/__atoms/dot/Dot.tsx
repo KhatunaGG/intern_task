@@ -1,0 +1,25 @@
+const Dot = () => {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect x="1" y="1.00006" width="38" height="38" rx="19" fill="white" />
+      <rect
+        x="1"
+        y="1.00006"
+        width="38"
+        height="38"
+        rx="19"
+        stroke="#4571E4"
+        strokeWidth="2"
+      />
+      <circle cx="20" cy="20.0001" r="4.5" fill="#4571E4" />
+    </svg>
+  );
+};
+
+export default Dot;
