@@ -140,6 +140,7 @@ const Dashboard = () => {
           errors={errors}
           showOverlay={showOverlay}
           progress={progress}
+          setShowDiff={setShowDiff}
         />
       </div>
     </section>

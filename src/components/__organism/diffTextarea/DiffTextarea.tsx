@@ -1,11 +1,12 @@
-import type { TextareaProps } from "../../../interfaces/interface";
+import type { DiffTextareaProps } from "../../../interfaces/interface";
 
 const DiffTextarea = ({
   value,
   onChange,
   diffResults,
   showDiff,
-}: TextareaProps) => {
+  setShowDiff,
+}: DiffTextareaProps) => {
   const renderDiffContent = () => {
     if (!diffResults || !showDiff) return null;
 
@@ -41,13 +42,14 @@ const DiffTextarea = ({
         value: updatedValue,
       },
     } as React.ChangeEvent<HTMLTextAreaElement>);
+    setShowDiff(false);
   };
 
   return showDiff && diffResults ? (
     <div
       className="overflow-y-auto absolute top-0 left-0 right-0 z-10 w-full min-h-[190px] max-h-[190px] md:min-h-[432px] md:max-h-[432px] bg-[#F0F7FF] p-3 resize-none font-normal text-sm md:text-[18px] leading-[26px] whitespace-pre-wrap       "
-      // contentEditable={true}
-      // suppressContentEditableWarning={true}
+      contentEditable={true}
+      suppressContentEditableWarning={true}
       onInput={handleInputChange}
     >
       {renderDiffContent()}

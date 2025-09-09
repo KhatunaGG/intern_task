@@ -59,6 +59,7 @@ export interface FormProps {
   errors: { text1?: string; text2?: string };
   showOverlay: boolean;
   progress: number;
+  setShowDiff: (value: boolean) => void;
 }
 
 export type MenuPropsType = {
@@ -81,4 +82,8 @@ export interface OverlayProps {
 
 export interface ProgressProps {
   value: number;
+}
+
+export interface DiffTextareaProps extends TextareaProps {
+  setShowDiff: (value: boolean) => void;
 }
