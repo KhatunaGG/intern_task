@@ -17,6 +17,7 @@ const Form = ({
   errors,
   showOverlay,
   progress,
+  setShowDiff,
 }: FormProps) => {
   const isActiveSubmit = diffText1.length > 0 && diffText2.length > 0;
 
@@ -33,9 +34,13 @@ const Form = ({
           {showDiff ? (
             <DiffTextarea
               value={text1}
-              onChange={(e) => setText1(e.target.value)}
+              onChange={(e) => {
+                setText1(e.target.value);
+                setShowDiff(false);
+              }}
               diffResults={diffText1}
               showDiff={showDiff}
+              setShowDiff={setShowDiff}
             />
           ) : (
             <>
@@ -58,9 +63,13 @@ const Form = ({
           {showDiff ? (
             <DiffTextarea
               value={text2}
-              onChange={(e) => setText2(e.target.value)}
+              onChange={(e) => {
+                setText2(e.target.value);
+                setShowDiff(false);
+              }}
               diffResults={diffText2}
               showDiff={showDiff}
+              setShowDiff={setShowDiff}
             />
           ) : (
             <>
