@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Nav from "../nav/Nav";
 import Form from "../form/Form";
-import type { IDiffResult } from "../../../interfaces/interface";
+import type { ErrorState, IDiffResult } from "../../../interfaces/interface";
 
 const Dashboard = () => {
   const [text1, setText1] = useState<string>("");
@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [diffText2, setDiffText2] = useState<IDiffResult[]>([]);
   const [showDiff, setShowDiff] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [errors, setErrors] = useState<{ text1?: string; text2?: string }>({});
+  const [errors, setErrors] = useState<ErrorState>({});
   const [showOverlay, setShowOverlay] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -141,6 +141,7 @@ const Dashboard = () => {
           showOverlay={showOverlay}
           progress={progress}
           setShowDiff={setShowDiff}
+          setErrors={setErrors}
         />
       </div>
     </section>
