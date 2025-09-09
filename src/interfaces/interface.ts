@@ -46,6 +46,11 @@ export type TextareaProps = {
   showDiff?: boolean;
 };
 
+export type ErrorState = {
+  text1?: string;
+  text2?: string;
+};
+
 export interface FormProps {
   text1: string;
   setText1: (value: string) => void;
@@ -60,6 +65,7 @@ export interface FormProps {
   showOverlay: boolean;
   progress: number;
   setShowDiff: (value: boolean) => void;
+  setErrors: React.Dispatch<React.SetStateAction<ErrorState>>;
 }
 
 export type MenuPropsType = {

@@ -18,8 +18,23 @@ const Form = ({
   showOverlay,
   progress,
   setShowDiff,
+  setErrors,
 }: FormProps) => {
   const isActiveSubmit = diffText1.length > 0 && diffText2.length > 0;
+
+  const handleText1Change = (value: string) => {
+    setText1(value);
+    if (errors.text1 && value.trim()) {
+      setErrors((prev) => ({ ...prev, text1: undefined }));
+    }
+  };
+
+  const handleText2Change = (value: string) => {
+    setText2(value);
+    if (errors.text2 && value.trim()) {
+      setErrors((prev) => ({ ...prev, text2: undefined }));
+    }
+  };
 
   return (
     <form
@@ -46,7 +61,7 @@ const Form = ({
             <>
               <Textarea
                 value={text1}
-                onChange={(e) => setText1(e.target.value)}
+                onChange={(e) => handleText1Change(e.target.value)}
               />
               {errors.text1 && (
                 <span className="absolute -bottom-4 left-0 text-xs font-normal text-red-600">
@@ -75,7 +90,7 @@ const Form = ({
             <>
               <Textarea
                 value={text2}
-                onChange={(e) => setText2(e.target.value)}
+                onChange={(e) => handleText2Change(e.target.value)}
               />
               {errors.text2 && (
                 <span className="absolute -bottom-4 left-0 text-xs font-normal text-red-600">
